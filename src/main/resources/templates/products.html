@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Products</h1>
+
+<h2>Add a product</h2>
+
+<form action="products" method="post">
+    <label>
+        name :
+        <input type="text" name="name"/>
+    </label> <br>
+    <label>
+        price :
+        <input type="text" name="price"/>
+    </label> <br>
+
+    <button type="submit">Add product</button>
+</form>
+
+<table>
+
+    <tr>
+        <th>name</th>
+        <th>price</th>
+    </tr>
+    <tr th:each="p: ${products}">
+        <td th:text="${p.getName()}"></td>
+        <td th:text="${p.getPrice()}"></td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>
